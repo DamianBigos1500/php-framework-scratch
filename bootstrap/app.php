@@ -1,5 +1,7 @@
 <?php
 
+use Phplite\Bootstrap\App;
+
 class Application
 {
 
@@ -18,6 +20,18 @@ class Application
    * */
   public static  function run()
   {
-    echo "Running application";
+    /**
+     * Define root path
+     * 
+     * */
+    define('ROOT', realpath(__DIR__ . "/.."));
+
+    /**
+     * Directory separator
+     * 
+     * */
+    define('DS', DIRECTORY_SEPARATOR);
+
+    App::run();
   }
 }
