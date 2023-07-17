@@ -4,10 +4,9 @@ use Phplite\Router\Route;
 
 Route::get('/user/{id}', 'HomeController@index');
 
-
-Route::any('/home', function () {
-  echo "test home anyF";
-});
+// Route::any('/home', function () {
+//   echo "test home anyF";
+// });
 
 Route::get('/home', 'HomeController@index');
 

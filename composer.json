@@ -6,7 +6,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": "^8.0.0",
-    "filp/whoops": "^2.15"
+    "filp/whoops": "^2.15",
+    "jenssegers/blade": "^1.4"
   },
   "autoload": {
     "psr-4": {
