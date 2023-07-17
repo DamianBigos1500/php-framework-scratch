@@ -3,7 +3,10 @@
 namespace Phplite\Bootstrap;
 
 use Phplite\Exceptions\Whoops;
-use Phplite\Cookie\Cookie;
+use Phplite\File\File;
+use Phplite\Http\Request;
+use Phplite\Http\Response;
+use Phplite\Router\Route;
 use Phplite\Session\Session;
 
 class App
@@ -16,7 +19,6 @@ class App
   private function __construct()
   {
   }
-
 
   /**
    * App constructor
@@ -31,12 +33,15 @@ class App
     // Start session
     Session::start();
 
-    Cookie::set('name', 'Damian');
-    echo Cookie::get('name');
+    // Handle Request
+    Request::handle();
 
+    // Require all routes directory
+    File::require_directory('routes');
 
+    // Handle the route
+    $data =  Route::handle();
 
-
-    echo "asdasdas";
+    Response::output($data);
   }
 }
